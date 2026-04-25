@@ -211,3 +211,6 @@ data/user_actions_3_months
 data/product_information
 .idea/
 .DS_Store
+
+#Large parquet files
+intent_sessions_full.parquet
