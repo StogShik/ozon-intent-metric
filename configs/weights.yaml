@@ -1,0 +1,31 @@
+groups:
+  quality:
+    weight: 0.40
+    method: equal
+    features:
+      dead_search_rate: {weight: 0.3333, direction: -1}
+      bounce_rate: {weight: 0.3333, direction: -1}
+      km_median_time_to_cart_s: {weight: 0.3334, direction: -1}
+
+  engagement:
+    weight: 0.35
+    method: equal
+    features:
+      rate_clicks: {weight: 0.10, direction: +1}
+      rate_views: {weight: 0.10, direction: +1}
+      rate_favs: {weight: 0.10, direction: +1}
+      multi_category_rate: {weight: 0.10, direction: +1}
+      click_per_view: {weight: 0.10, direction: +1}
+      cart_per_click: {weight: 0.10, direction: +1}
+      cart_rate: {weight: 0.10, direction: +1}
+      session_conversion_rate: {weight: 0.10, direction: +1}
+      mean_duration_s: {weight: 0.10, direction: +1}
+      search_refinement_rate: {weight: 0.10, direction: +1}
+
+  discovery:
+    weight: 0.25
+    method: equal
+    features:
+      rate_unique_queries: {weight: 0.3333, direction: +1}
+      rate_searches: {weight: 0.3333, direction: +1}
+      view_per_search: {weight: 0.3334, direction: +1}

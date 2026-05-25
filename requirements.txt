@@ -1,5 +1,8 @@
 polars
 polars-runtime-32
 numpy
+pandas
+pyarrow
+pyyaml
 matplotlib
 seaborn

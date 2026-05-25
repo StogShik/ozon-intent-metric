@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intent Metrics</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="toolbar">
+      <div>
+        <h1>Intent Metrics</h1>
+        <p id="source">Loading...</p>
+      </div>
+      <form id="filters" class="filters">
+        <label>
+          From
+          <input id="start" type="date" required>
+        </label>
+        <label>
+          To
+          <input id="end" type="date" required>
+        </label>
+        <button type="submit">Apply</button>
+      </form>
+    </section>
+
+    <section class="kpis" aria-label="Summary">
+      <div class="kpi">
+        <span>Health</span>
+        <strong id="kpi-health">-</strong>
+      </div>
+      <div class="kpi">
+        <span>Searches to cart</span>
+        <strong id="kpi-searches">-</strong>
+      </div>
+      <div class="kpi">
+        <span>Sessions</span>
+        <strong id="kpi-sessions">-</strong>
+      </div>
+      <div class="kpi">
+        <span>Converted</span>
+        <strong id="kpi-converted">-</strong>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Daily Results</h2>
+        <span id="range-note"></span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Health</th>
+              <th>Quality</th>
+              <th>Engagement</th>
+              <th>Discovery</th>
+              <th>Searches to cart</th>
+              <th>Unique queries to cart</th>
+              <th>Time to cart, s</th>
+              <th>Sessions</th>
+              <th>Converted</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
