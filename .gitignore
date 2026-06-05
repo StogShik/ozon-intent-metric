@@ -207,10 +207,38 @@ marimo/_lsp/
 __marimo__/
 
 
-data/user_actions_3_months
-data/product_information
 .idea/
 .DS_Store
 
-#Large parquet files
-intent_sessions_full.parquet
+# === Local roadmap document — НИКОГДА не коммитить ===
+CLAUDE.md
+
+# === Raw / external data (in repo only via README instructions) ===
+data/user_actions_3_months/
+data/product_information/
+data/models/
+
+# === Generated large artefacts ===
+# Sessions
+data/intent_sessions*.parquet
+# Day summary (full + per-day)
+data/day_summary*.parquet
+data/daily_summaries/
+# Daily Health Score
+data/daily_metrics*.parquet
+# NLP artefacts (rebuild via src/nlp/)
+data/domain_vocab.parquet
+data/product_information_norm.parquet
+data/query_features.parquet
+data/query_embeddings*
+# Framework state
+data/framework_state/
+
+# === ML training byproducts ===
+catboost_info/
+*.cbm
+
+# === Analysis scratch ===
+# Keep analysis/out/*.json — they're tracked decision records.
+# But don't commit analysis/tmp/ or local experimental dumps.
+src/metric/analysis/tmp/
