@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from datetime import date
 from pathlib import Path
 
@@ -8,11 +9,11 @@ import numpy as np
 import pandas as pd
 import polars as pl
 
-from build_intent_sessions import build_intent_sessions
-from health_metric import health_score, load_weights
-
-
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "src"))
+
+from build_intent_sessions import build_intent_sessions
+from metric.metric import health_score, load_weights
 
 
 def _safe_div(num: pl.Expr, den: pl.Expr) -> pl.Expr:
