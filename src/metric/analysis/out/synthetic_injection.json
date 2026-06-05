@@ -1,0 +1,109 @@
+{
+  "raw_mad_thresholds": {
+    "lo": 0.5426610092795369,
+    "med": 0.558602185027519,
+    "hi": 0.5745433607755012
+  },
+  "delta_mad_thresholds": {
+    "lo": -1.8967996933609839,
+    "med": -0.005731243755957863,
+    "hi": 1.8853372058490683
+  },
+  "scenarios": [
+    {
+      "scenario": "dsr  spike +20%",
+      "raw": {
+        "tp": 1,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.5,
+        "recall": 1.0,
+        "ttd_days": 0
+      },
+      "delta": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "ttd_days": 16
+      }
+    },
+    {
+      "scenario": "dsr  step  +10%",
+      "raw": {
+        "tp": 21,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "ttd_days": 0
+      },
+      "delta": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 19,
+        "precision": 1.0,
+        "recall": 0.09523809523809523,
+        "ttd_days": 16
+      }
+    },
+    {
+      "scenario": "dsr  drift +1%/d×10d",
+      "raw": {
+        "tp": 10,
+        "fp": 1,
+        "fn": 0,
+        "precision": 0.9090909090909091,
+        "recall": 1.0,
+        "ttd_days": 0
+      },
+      "delta": {
+        "tp": 0,
+        "fp": 2,
+        "fn": 10,
+        "precision": 0.0,
+        "recall": 0.0,
+        "ttd_days": 16
+      }
+    },
+    {
+      "scenario": "cpc  spike −20%",
+      "raw": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "ttd_days": 0
+      },
+      "delta": {
+        "tp": 1,
+        "fp": 3,
+        "fn": 0,
+        "precision": 0.25,
+        "recall": 1.0,
+        "ttd_days": 0
+      }
+    },
+    {
+      "scenario": "cpc  step  −10%",
+      "raw": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 15,
+        "precision": 1.0,
+        "recall": 0.2857142857142857,
+        "ttd_days": 10
+      },
+      "delta": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 19,
+        "precision": 1.0,
+        "recall": 0.09523809523809523,
+        "ttd_days": 16
+      }
+    }
+  ]
+}

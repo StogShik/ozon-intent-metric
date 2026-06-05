@@ -1,0 +1,53 @@
+{
+  "target_feature": "cart_per_click",
+  "inject_global_idx": 45,
+  "inject_date": "2024-04-15",
+  "schemes": [
+    {
+      "scheme": "fixed_first_half",
+      "kind": "fixed",
+      "size_days": 30,
+      "n_base_actual": 30,
+      "sigma_feature": 0.05321520148469278,
+      "corridor_lo": 1.2868275199264185,
+      "corridor_hi": 1.6061187288345753,
+      "corridor_width": 0.31929120890815677,
+      "clean_health": 100.86628368191876,
+      "injected_health": 100.21463099195577,
+      "delta_health": -0.6516526899629866,
+      "raw_alert_triggered": true
+    },
+    {
+      "scheme": "rolling_14",
+      "kind": "rolling",
+      "size_days": 14,
+      "n_base_actual": 14,
+      "sigma_feature": 0.03310657399630393,
+      "corridor_lo": 1.3914509525701606,
+      "corridor_hi": 1.590090396547984,
+      "corridor_width": 0.1986394439778234,
+      "clean_health": 100.54466650874598,
+      "injected_health": 100.15584442251668,
+      "delta_health": -0.3888220862292968,
+      "raw_alert_triggered": true
+    },
+    {
+      "scheme": "rolling_30",
+      "kind": "rolling",
+      "size_days": 30,
+      "n_base_actual": 30,
+      "sigma_feature": 0.04339842347745721,
+      "corridor_lo": 1.3454096295160616,
+      "corridor_hi": 1.605800170380805,
+      "corridor_width": 0.26039054086474334,
+      "clean_health": 100.81080152998784,
+      "injected_health": 100.29380584062854,
+      "delta_health": -0.5169956893593053,
+      "raw_alert_triggered": true
+    }
+  ],
+  "spread_delta_health": 0.2628306037336898,
+  "spread_clean_health": 0.3216171731727826,
+  "alert_consistent": true,
+  "verdict": "PASS"
+}

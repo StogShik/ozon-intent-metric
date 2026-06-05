@@ -1,0 +1,48 @@
+{
+  "overall": "FAIL",
+  "sections": {
+    "C1_fp_rate_baseline_global": {
+      "verdict": "FAIL",
+      "blocking": false,
+      "fail_k3": 11,
+      "fail_k3_5": 7
+    },
+    "C1b_fp_rate_dow_loo": {
+      "verdict": "FAIL",
+      "blocking": true,
+      "fail_k3": 2,
+      "fail_k3_5": 2
+    },
+    "C1c_fp_rate_dow_production": {
+      "verdict": "FAIL",
+      "blocking": true,
+      "fail_k3": 7,
+      "fail_k3_5": 3
+    },
+    "C2_health_bootstrap_ci": {
+      "verdict": "PASS",
+      "blocking": true,
+      "health_ci_width": 1.73
+    },
+    "C3_synthetic_full": {
+      "verdict": "PASS",
+      "blocking": true,
+      "pct_detected": 0.9583333333333334,
+      "blind": [],
+      "weak": [
+        "click_per_view"
+      ]
+    },
+    "C4_baseline_window": {
+      "verdict": "PASS",
+      "blocking": true,
+      "spread_delta_health": 0.2628306037336898,
+      "alert_consistent": true
+    }
+  },
+  "recommendations": [
+    "C1b: LOO valид (n=61) даёт остаточный шум на cart_rate / session_conversion_rate из-за тяжёлых хвостов конверсионных метрик. Перепрогнать при >90 днях данных.",
+    "C1c: 3 growth-фичи (rate_views/clicks/favs) шумят на baseline=30 — слишком мало точек per DOW (~4-5). Принять как known limitation; перепрогнать при baseline≥60 дней.",
+    "C3: слабые фичи ['click_per_view'] (только spike детектится) — добавить EWMA-канал для step/drift или принять как trade-off."
+  ]
+}

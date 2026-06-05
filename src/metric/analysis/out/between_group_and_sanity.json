@@ -1,0 +1,25 @@
+{
+  "between_group": {
+    "domain": {
+      "quality": 0.4,
+      "engagement": 0.35,
+      "discovery": 0.25
+    },
+    "consensus_optmin_diagnostic": {
+      "quality": 0.49795262396995194,
+      "engagement": 0.14185449692901728,
+      "discovery": 0.36019287910103076
+    },
+    "max_divergence": 0.21,
+    "decision": "escalate to team"
+  },
+  "sanity": {
+    "corr_old_new_within_equal": 1.0,
+    "stress_dead_search_plus20pct_5days": {
+      "delta_quality_mean": -6.7288655013183645,
+      "delta_engagement_mean": 0.0,
+      "delta_discovery_mean": 0.0,
+      "delta_health_mean": -2.691546200527344
+    }
+  }
+}

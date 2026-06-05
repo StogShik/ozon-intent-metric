@@ -1,0 +1,264 @@
+{
+  "n_days": 61,
+  "per_feature": [
+    {
+      "feature": "dead_search_rate",
+      "k": 3.0,
+      "n_alerts": 2,
+      "n_valid_days": 61,
+      "fp_rate": 0.03278688524590164,
+      "is_anti": true
+    },
+    {
+      "feature": "bounce_rate",
+      "k": 3.0,
+      "n_alerts": 1,
+      "n_valid_days": 61,
+      "fp_rate": 0.01639344262295082,
+      "is_anti": true
+    },
+    {
+      "feature": "km_median_time_to_cart_s",
+      "k": 3.0,
+      "n_alerts": 4,
+      "n_valid_days": 61,
+      "fp_rate": 0.06557377049180328,
+      "is_anti": true
+    },
+    {
+      "feature": "rate_clicks",
+      "k": 3.0,
+      "n_alerts": 7,
+      "n_valid_days": 61,
+      "fp_rate": 0.11475409836065574,
+      "is_anti": false
+    },
+    {
+      "feature": "rate_views",
+      "k": 3.0,
+      "n_alerts": 11,
+      "n_valid_days": 61,
+      "fp_rate": 0.18032786885245902,
+      "is_anti": false
+    },
+    {
+      "feature": "rate_favs",
+      "k": 3.0,
+      "n_alerts": 9,
+      "n_valid_days": 61,
+      "fp_rate": 0.14754098360655737,
+      "is_anti": false
+    },
+    {
+      "feature": "multi_category_rate",
+      "k": 3.0,
+      "n_alerts": 5,
+      "n_valid_days": 61,
+      "fp_rate": 0.08196721311475409,
+      "is_anti": false
+    },
+    {
+      "feature": "click_per_view",
+      "k": 3.0,
+      "n_alerts": 1,
+      "n_valid_days": 61,
+      "fp_rate": 0.01639344262295082,
+      "is_anti": false
+    },
+    {
+      "feature": "cart_per_click",
+      "k": 3.0,
+      "n_alerts": 3,
+      "n_valid_days": 61,
+      "fp_rate": 0.04918032786885246,
+      "is_anti": false
+    },
+    {
+      "feature": "cart_rate",
+      "k": 3.0,
+      "n_alerts": 7,
+      "n_valid_days": 61,
+      "fp_rate": 0.11475409836065574,
+      "is_anti": false
+    },
+    {
+      "feature": "session_conversion_rate",
+      "k": 3.0,
+      "n_alerts": 6,
+      "n_valid_days": 61,
+      "fp_rate": 0.09836065573770492,
+      "is_anti": false
+    },
+    {
+      "feature": "mean_duration_s",
+      "k": 3.0,
+      "n_alerts": 1,
+      "n_valid_days": 61,
+      "fp_rate": 0.01639344262295082,
+      "is_anti": false
+    },
+    {
+      "feature": "search_refinement_rate",
+      "k": 3.0,
+      "n_alerts": 4,
+      "n_valid_days": 61,
+      "fp_rate": 0.06557377049180328,
+      "is_anti": false
+    },
+    {
+      "feature": "rate_unique_queries",
+      "k": 3.0,
+      "n_alerts": 9,
+      "n_valid_days": 61,
+      "fp_rate": 0.14754098360655737,
+      "is_anti": false
+    },
+    {
+      "feature": "rate_searches",
+      "k": 3.0,
+      "n_alerts": 10,
+      "n_valid_days": 61,
+      "fp_rate": 0.16393442622950818,
+      "is_anti": false
+    },
+    {
+      "feature": "view_per_search",
+      "k": 3.0,
+      "n_alerts": 5,
+      "n_valid_days": 61,
+      "fp_rate": 0.08196721311475409,
+      "is_anti": false
+    },
+    {
+      "feature": "dead_search_rate",
+      "k": 3.5,
+      "n_alerts": 2,
+      "n_valid_days": 61,
+      "fp_rate": 0.03278688524590164,
+      "is_anti": true
+    },
+    {
+      "feature": "bounce_rate",
+      "k": 3.5,
+      "n_alerts": 1,
+      "n_valid_days": 61,
+      "fp_rate": 0.01639344262295082,
+      "is_anti": true
+    },
+    {
+      "feature": "km_median_time_to_cart_s",
+      "k": 3.5,
+      "n_alerts": 1,
+      "n_valid_days": 61,
+      "fp_rate": 0.01639344262295082,
+      "is_anti": true
+    },
+    {
+      "feature": "rate_clicks",
+      "k": 3.5,
+      "n_alerts": 5,
+      "n_valid_days": 61,
+      "fp_rate": 0.08196721311475409,
+      "is_anti": false
+    },
+    {
+      "feature": "rate_views",
+      "k": 3.5,
+      "n_alerts": 9,
+      "n_valid_days": 61,
+      "fp_rate": 0.14754098360655737,
+      "is_anti": false
+    },
+    {
+      "feature": "rate_favs",
+      "k": 3.5,
+      "n_alerts": 9,
+      "n_valid_days": 61,
+      "fp_rate": 0.14754098360655737,
+      "is_anti": false
+    },
+    {
+      "feature": "multi_category_rate",
+      "k": 3.5,
+      "n_alerts": 3,
+      "n_valid_days": 61,
+      "fp_rate": 0.04918032786885246,
+      "is_anti": false
+    },
+    {
+      "feature": "click_per_view",
+      "k": 3.5,
+      "n_alerts": 0,
+      "n_valid_days": 61,
+      "fp_rate": 0.0,
+      "is_anti": false
+    },
+    {
+      "feature": "cart_per_click",
+      "k": 3.5,
+      "n_alerts": 0,
+      "n_valid_days": 61,
+      "fp_rate": 0.0,
+      "is_anti": false
+    },
+    {
+      "feature": "cart_rate",
+      "k": 3.5,
+      "n_alerts": 6,
+      "n_valid_days": 61,
+      "fp_rate": 0.09836065573770492,
+      "is_anti": false
+    },
+    {
+      "feature": "session_conversion_rate",
+      "k": 3.5,
+      "n_alerts": 6,
+      "n_valid_days": 61,
+      "fp_rate": 0.09836065573770492,
+      "is_anti": false
+    },
+    {
+      "feature": "mean_duration_s",
+      "k": 3.5,
+      "n_alerts": 1,
+      "n_valid_days": 61,
+      "fp_rate": 0.01639344262295082,
+      "is_anti": false
+    },
+    {
+      "feature": "search_refinement_rate",
+      "k": 3.5,
+      "n_alerts": 3,
+      "n_valid_days": 61,
+      "fp_rate": 0.04918032786885246,
+      "is_anti": false
+    },
+    {
+      "feature": "rate_unique_queries",
+      "k": 3.5,
+      "n_alerts": 7,
+      "n_valid_days": 61,
+      "fp_rate": 0.11475409836065574,
+      "is_anti": false
+    },
+    {
+      "feature": "rate_searches",
+      "k": 3.5,
+      "n_alerts": 9,
+      "n_valid_days": 61,
+      "fp_rate": 0.14754098360655737,
+      "is_anti": false
+    },
+    {
+      "feature": "view_per_search",
+      "k": 3.5,
+      "n_alerts": 3,
+      "n_valid_days": 61,
+      "fp_rate": 0.04918032786885246,
+      "is_anti": false
+    }
+  ],
+  "verdict": "FAIL",
+  "fail_count_k3": 11,
+  "fail_count_k3_5": 7
+}

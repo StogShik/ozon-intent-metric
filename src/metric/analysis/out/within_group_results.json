@@ -1,0 +1,152 @@
+{
+  "quality": {
+    "group": "quality",
+    "features": [
+      "dead_search_rate",
+      "bounce_rate",
+      "km_median_time_to_cart_s"
+    ],
+    "directions": [
+      -1,
+      -1,
+      -1
+    ],
+    "method": "Equal",
+    "reason": "ни PC1 ни OptMin не дают надёжного преимущества",
+    "weights": {
+      "dead_search_rate": 0.3333333333333333,
+      "bounce_rate": 0.3333333333333333,
+      "km_median_time_to_cart_s": 0.3333333333333333
+    },
+    "diagnostics": {
+      "pc1_expvar": 0.5695905616687155,
+      "pc1_all_positive": false,
+      "min_corr": {
+        "Equal": 0.4718104702998597,
+        "PC1": -0.01409768250077331,
+        "OptMin": 0.6760501910182565
+      },
+      "mean_corr": {
+        "Equal": 0.698871057671815,
+        "PC1": 0.6114848728981962,
+        "OptMin": 0.6760501932267795
+      },
+      "bootstrap_max_rel_width": {
+        "PC1": 1.531209252391502,
+        "OptMin": 2.6323507450581225
+      },
+      "cv_max_abs_diff": {
+        "equal": 0.0,
+        "pc1": 0.20242205188605056,
+        "optmin": 0.36832314394811205
+      }
+    }
+  },
+  "engagement": {
+    "group": "engagement",
+    "features": [
+      "rate_clicks",
+      "rate_views",
+      "rate_favs",
+      "multi_category_rate",
+      "click_per_view",
+      "cart_per_click",
+      "cart_rate",
+      "session_conversion_rate",
+      "mean_duration_s",
+      "search_refinement_rate"
+    ],
+    "directions": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "method": "Equal",
+    "reason": "bootstrap CI PC1 включают равные веса — consensus не делает работы",
+    "weights": {
+      "rate_clicks": 0.1,
+      "rate_views": 0.1,
+      "rate_favs": 0.1,
+      "multi_category_rate": 0.1,
+      "click_per_view": 0.1,
+      "cart_per_click": 0.1,
+      "cart_rate": 0.1,
+      "session_conversion_rate": 0.1,
+      "mean_duration_s": 0.1,
+      "search_refinement_rate": 0.1
+    },
+    "diagnostics": {
+      "pc1_expvar": 0.3472304397043187,
+      "pc1_all_positive": false,
+      "min_corr": {
+        "Equal": -0.09037220920093524,
+        "PC1": -0.34146128578708024,
+        "OptMin": 0.3057602252703951
+      },
+      "mean_corr": {
+        "Equal": 0.518457072502043,
+        "PC1": 0.49252534100954104,
+        "OptMin": 0.4256775546178046
+      },
+      "bootstrap_max_rel_width": {
+        "PC1": 2.042325928618483,
+        "OptMin": 121418.15531831028
+      },
+      "cv_max_abs_diff": {
+        "equal": 0.0,
+        "pc1": 0.11106217712483432,
+        "optmin": 0.3796312290942532
+      }
+    }
+  },
+  "discovery": {
+    "group": "discovery",
+    "features": [
+      "rate_unique_queries",
+      "rate_searches",
+      "view_per_search"
+    ],
+    "directions": [
+      1,
+      1,
+      1
+    ],
+    "method": "Equal",
+    "reason": "ни PC1 ни OptMin не дают надёжного преимущества",
+    "weights": {
+      "rate_unique_queries": 0.3333333333333333,
+      "rate_searches": 0.3333333333333333,
+      "view_per_search": 0.3333333333333333
+    },
+    "diagnostics": {
+      "pc1_expvar": 0.6607488961898901,
+      "pc1_all_positive": false,
+      "min_corr": {
+        "Equal": 0.4216290369706192,
+        "PC1": -0.07649071836335072,
+        "OptMin": 0.6837875520249589
+      },
+      "mean_corr": {
+        "Equal": 0.7308774991385002,
+        "PC1": 0.6372236858910569,
+        "OptMin": 0.6919667515330992
+      },
+      "bootstrap_max_rel_width": {
+        "PC1": 2.3072159069696667,
+        "OptMin": 34.661699419967846
+      },
+      "cv_max_abs_diff": {
+        "equal": 0.0,
+        "pc1": 0.08233219624560663,
+        "optmin": 0.5029000058863338
+      }
+    }
+  }
+}
