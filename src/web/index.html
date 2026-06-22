@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Score · Ozon Intent Metric</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="shell">
+
+    <header class="brand">
+      <div class="brand-mark">Health Score</div>
+      <span class="brand-sep"></span>
+      <div class="brand-meta">Ozon Intent Metric · <strong>Кейс 4</strong></div>
+      <div class="brand-spacer"></div>
+      <div class="brand-status">
+        <span class="dot"></span>
+        <span id="brand-status-text">connecting…</span>
+      </div>
+    </header>
+
+    <aside class="rail" aria-label="Sections">
+      <h2>Sections</h2>
+      <nav id="rail-nav">
+        <!-- nav-items rendered by app.js (so we can show active hash) -->
+      </nav>
+      <dl class="rail-footer">
+        <dt>Baseline</dt>
+        <dd id="rf-baseline">—</dd>
+        <dt>Days observed</dt>
+        <dd id="rf-days">—</dd>
+        <dt>Anomalies</dt>
+        <dd id="rf-anom">—</dd>
+      </dl>
+    </aside>
+
+    <main class="main">
+      <div id="view" class="canvas">
+        <div class="empty">Loading…</div>
+      </div>
+    </main>
+
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+# Production-веса Health Score
+# ============================
+# Источник: src/metric/analysis/03_within_group_weights.py
+#          src/metric/analysis/04_between_group_and_sanity.py
+# Обоснование: docs/metric_choice.md
+# Baseline для расчёта: 2024-03-01 → 2024-04-30 (61 день agg, 30 train / 31 val).
+#
+# Внутри групп: Equal (consensus PC1/OptMin провалили bootstrap-стабильность на n=61).
+# Между группами: domain priors 0.40/0.35/0.25.
+
+groups:
+  quality:
+    weight: 0.40
+    method: equal
+    features:
+      dead_search_rate: {weight: 0.3333, direction: -1}
+      bounce_rate: {weight: 0.3333, direction: -1}
+      km_median_time_to_cart_s: {weight: 0.3334, direction: -1}
+
+  engagement:
+    weight: 0.35
+    method: equal
+    features:
+      rate_clicks: {weight: 0.10, direction: +1}
+      rate_views: {weight: 0.10, direction: +1}
+      rate_favs: {weight: 0.10, direction: +1}
+      multi_category_rate: {weight: 0.10, direction: +1}
+      click_per_view: {weight: 0.10, direction: +1}
+      cart_per_click: {weight: 0.10, direction: +1}
+      cart_rate: {weight: 0.10, direction: +1}
+      session_conversion_rate: {weight: 0.10, direction: +1}
+      mean_duration_s: {weight: 0.10, direction: +1}
+      search_refinement_rate: {weight: 0.10, direction: +1}
+
+  discovery:
+    weight: 0.25
+    method: equal
+    features:
+      rate_unique_queries: {weight: 0.3333, direction: +1}
+      rate_searches: {weight: 0.3333, direction: +1}
+      view_per_search: {weight: 0.3334, direction: +1}
+
+# Anomaly-detection канал
+# ------------------------
+# Production: raw-MAD per metric (см. new_metric.ipynb §5.2).
+# Delta-anomaly (LOO Composite-веса) — НЕ production. См. metric_choice.md §B.
+delta_anomaly:
+  status: not_production
+  use: diagnostic_only
+
+# NLP-pending (после интеграции NLP-обогащения в build_day_summary.py)
+# -------------------------------------------------------------------
+# При появлении в day_summary.parquet веса будут пересчитаны:
+nlp_pending:
+  - feature: complex_query_rate
+    group: quality
+    direction: -1
+  - feature: in_product_base_rate
+    group: quality
+    direction: +1
