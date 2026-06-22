@@ -25,16 +25,13 @@
 
 | Папка | Что это | README |
 |---|---|---|
-| `src/pipeline/` | production: raw events · sessions · day_summary · daily_metrics + RCA-артефакты | [README](src/pipeline/README.md) |
-| `src/nlp/` | production: домен-словарь, нормализация, query_features | [README](src/nlp/README.md) |
-| `src/metric/` | production: Health Score, anomaly, RCA, валидация | [README](src/metric/README.md) |
+| `src/pipeline/` | production: raw events, sessions, day_summary, daily_metrics + RCA-артефакты | [README](src/pipeline/README.md) |
+| `src/metric/` | production: Health Score, anomaly, RCA | — |
 | `src/web/` | дашборд аналитика (HTTP + ES-modules frontend) | [README](src/web/README.md) |
 | `configs/` | `weights.yaml` — single source of truth весов | — |
-| `docs/` | контракты данных, обоснование метрики, валидация, [находки](docs/findings.md) | — |
-| `deliverables/` | презентация (PDF), сценарий доклада, генератор дека | [README](deliverables/README.md) |
+| `docs/` | [находки](docs/findings.md), обоснование метрики, валидация, справочник по данным | — |
 | `tests/` | pytest-сетка инвариантов (синтетика, без `data/`) | — |
-| `research/` | живые research-ноутбуки (обоснование решений) | [README](research/README.md) |
-| `archive/` | замороженный код (legacy IRS, отклонённые ветки) | [README](archive/README.md) |
+| `research/` | research-ноутбуки (обоснование решений) | — |
 
 ## Поток данных
 
@@ -55,7 +52,7 @@ intent_sessions + NLP-features  (data/intent_sessions_with_query_features.parque
         └── segment_breakdown (weak spots)    data/segment_breakdown.parquet
         │
         ▼   src/web/server.py
-HTTP UI on :8760
+HTTP UI on :8080
 ```
 
 ## Установка
@@ -86,18 +83,7 @@ make smoke          # smoke-test production-API на синтетике
 make verify-enrich  # сверка NLP-порта с готовым артефактом (нужен data/)
 ```
 
-Остальные цели — `make help` (enrich, pipeline, ui, all).
-
-## Презентация и выводы
-
-- `deliverables/ozon_intent_search_quality.pdf` — бизнес-презентация (14 слайдов,
-  под 5 докладчиков × ~2 мин), графики собраны из посчитанных артефактов.
-- `deliverables/talk_track.md` — сценарий доклада на 10 мин + заготовки Q&A.
-- `docs/findings.md` — письменный анализ: что не так с поиском Ozon, топ-3 фикса.
-
-```bash
-make deck   # пересобрать PDF + графики из data/*.parquet
-```
+Остальные цели в `Makefile`: `enrich`, `pipeline`, `ui`, `all`.
 
 ## Входные данные (не в git)
 
@@ -163,8 +149,8 @@ python src/pipeline/run_daily_pipeline.py \
 ## Web UI (дашборд аналитика)
 
 ```bash
-python src/web/server.py --metrics data/daily_metrics_full.parquet --port 8760
-# открыть http://127.0.0.1:8760
+make ui   # = python src/web/server.py --metrics data/daily_metrics_full.parquet --port 8080
+# открыть http://127.0.0.1:8080
 ```
 
 Пути к decomposition / segment_breakdown / sessions подхватываются по
@@ -189,21 +175,17 @@ RCA programmatic API — `src/metric/rca.py` (`decompose_health`, `explain_drop`
 
 ## Документация
 
-- `docs/schema.md` — контракты `intent_sessions`, `day_summary`, `decomposition`, `segment_breakdown`.
-- `docs/metric_choice.md` — обоснование выбора Health Score, Equal-весов.
+- `docs/findings.md` — что не так с поиском Ozon: находки и топ-3 фикса.
+- `docs/metric_choice.md` — обоснование выбора Health Score и весов.
 - `docs/validation.md` — проверки метрики (FP rate, bootstrap CI, synthetic).
-- `docs/weight_calibration.md` — методология подбора весов.
 - `docs/session_threshold.md` — выбор `gap_min` для сессионизации.
-- `docs/metric_candidates.md` — 5 кандидатов в метрику (legacy bake-off).
-- `docs/day_summary_beta.md` — заметки DE-команды.
+- `docs/schema.md` — справочник по данным (`intent_sessions`, `day_summary`, `decomposition`, `segment_breakdown`).
 
 ## Git-ветки
 
-- `main` — стабильная интегрированная версия.
-- `de`, `nlp`, `metric`, `pipeline` — **архивные** ветки команд. Не использовать
-  для новой работы; их живой код интегрирован в `main`, замороженный — в `archive/`.
+- `main` — основная ветка.
 
-Новые фичи · ветка от `main` · PR в `main`.
+Новые фичи: ветка от `main`, затем PR в `main`.
 
 ## Заметки
 
