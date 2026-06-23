@@ -7,19 +7,8 @@ DAY_SUMMARY   = data/day_summary_full.parquet
 METRICS       = data/daily_metrics_full.parquet
 BASELINE      = --baseline-start 2024-03-01 --baseline-end 2024-03-30
 
-.PHONY: help install test smoke enrich verify-enrich pipeline screenshots deck ui all
+.PHONY: help install test smoke enrich verify-enrich pipeline ui all
 
-help:
-	@echo "make install        — зависимости в текущее окружение"
-	@echo "make test           — pytest-сетка (синтетика, без data/, <5 сек)"
-	@echo "make smoke          — smoke-test production-API метрики"
-	@echo "make enrich         — NLP-обогащение sessions (вход weak-spots/examples)"
-	@echo "make verify-enrich  — сверка порта NLP-обогащения с готовым артефактом"
-	@echo "make pipeline       — Health Score + RCA-артефакты из готовых sessions"
-	@echo "make screenshots    — скриншоты дашборда для слайда (headless Chrome, macOS)"
-	@echo "make deck           — презентация PDF + графики из посчитанных артефактов"
-	@echo "make ui             — дашборд на http://127.0.0.1:8760"
-	@echo "make all            — test + smoke + enrich + pipeline"
 
 install:
 	$(PY) -m pip install -r requirements.txt
@@ -31,12 +20,10 @@ smoke:
 	$(PY) src/metric/_smoke_test.py
 
 enrich:
-	$(PY) src/pipeline/enrich_sessions_nlp.py \
-	  --sessions $(SESSIONS) --products $(PRODUCTS) --out $(SESSIONS_NLP)
+	$(PY) src/pipeline/enrich_sessions_nlp.py --sessions $(SESSIONS) --products $(PRODUCTS) --out $(SESSIONS_NLP)
 
 verify-enrich:
-	$(PY) src/pipeline/enrich_sessions_nlp.py \
-	  --sessions $(SESSIONS) --products $(PRODUCTS) --verify-against $(SESSIONS_NLP)
+	$(PY) src/pipeline/enrich_sessions_nlp.py --sessions $(SESSIONS) --products $(PRODUCTS) --verify-against $(SESSIONS_NLP)
 
 pipeline:
 	$(PY) src/pipeline/run_daily_pipeline.py \
@@ -47,6 +34,6 @@ pipeline:
 	  --segments-sessions $(SESSIONS_NLP)
 
 ui:
-	$(PY) src/web/server.py --metrics $(METRICS) --port 8760
+	$(PY) src/web/server.py --metrics $(METRICS) --port 8080
 
 all: test smoke enrich pipeline
