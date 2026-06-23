@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Env/secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests/cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+pytest-cache-files-*/
+.tmp/
+
+# Project artifacts
+artifacts/
+outputs/
+reports/
+models/
+
+# Data - keep generated and external data out of git
+data/raw/
+data/interim/
+data/external/
+data/*.parquet
+data/product_information/
+data/user_actions_3_months/
+
+# Keep data folder
+!data/.gitkeep
