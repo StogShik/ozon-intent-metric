@@ -192,3 +192,10 @@ RCA programmatic API — `src/metric/rca.py` (`decompose_health`, `explain_drop`
 - Generated parquet-файлы в `data/` не коммитим (`.gitignore`).
 - Для больших периодов используется `--session-chunk-days 1`, чтобы снизить RAM.
 - Если порт занят — `--port 8761` или другой.
+
+## Создатели
+- [StogShik](https://github.com/StogShik)
+- [NioTheX](https://github.com/NioTheX)
+- [mustquery](https://github.com/mustquery)
+- [v0d0v](https://github.com/v0d0v)
+- [LoQwerty](https://github.com/LoQwerty)
